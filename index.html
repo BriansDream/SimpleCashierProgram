@@ -9,45 +9,101 @@
 </head>
 <body>
 
-    <section class="container">
-        <div class="image">
-            <div class="daftar1">
-            <img src="./asset/nasi.jpg" alt="Nasi Goreng" >
-            <div class="product">
-                20000
-            </div>
-        </div>
-        <div class="daftar1">
-            <img src="./asset/nasi.jpg" alt="Nasi Goreng" >
-            <div class="product">
-                30000
-            </div>
-        </div>
-
-        <div class="daftar1">
-            <img src="./asset/nasi.jpg" alt="Nasi Goreng" >
-            <div class="product">
-                25000
-            </div>
-        </div>
-        </div>
-
-
-        <div class="pembayaran">
-
-            <div class="jumlahPesanan">
-                <h1>Jumlah Pesanan</h1>
-                <h1 class="displayPemesanan"> 0</h1>
-            </div>
-           
-            <div class="totalBayar">
-            <div class="container-total product total">
-                Total Pembayaran
-            </div>
-            <h1 class="display">0</h1>
-        </div>
+    <section class="first-container">
+        <div class="search-container">
+        <h1>Rumah Makan Budiman Sitorus</h1>
+        <input type="text" placeholder="What are u looking for?" class="search-text"> 
+        <button type="button" id="btnSearch">Search</button>
+        <h1 class="display-search"> </h1>
     </div>
     </section>
+
+
+    <section class="first-container-menu">
+
+        
+        <div class="first-list-menu ">
+            <div class="food-image">
+                <img src="./asset/nasi.jpg" alt="Fried Rice" title="Fried Rice" >
+            </div>
+            
+            <div class="container-food-name">
+                <div class="food-name">
+                    Nasi Goreng
+                </div>
+                <div class="price">
+                20000
+                </div>
+            </div>
+            </div>
+
+            <div class="second-list-menu ">
+                <div class="food-image">
+                    <img src="./asset/soto-ayam.webp.jpg" alt="Fried Rice" title="Fried Rice" >
+                </div>
+                
+                <div class="container-food-name">
+                    <div class="food-name">
+                        Soto Ayam
+                    </div>
+    
+                    <div class="price">
+                    15000
+                </div>
+                </div>
+            </div>
+
+        
+        
+    </section>
+
+
+
+
+
+    <section class="payment-container">
+        <div class="container-quantity-and-name-order">
+            <div class="order-quantity">
+               
+                <h1>Order Quantity =</h1>
+                <h1 class="display-total-order">0</h1>
+             
+            </div>
+            
+
+            <div class="order-name">
+                <h1>Order Name :</h1>
+                <h1 class="display-order-name"></h1>
+            </div>
+
+        </div>
+ 
+
+        <div class="container-total-payment">
+
+            <div class="total-payment">
+                <div class="total-payment-btn">
+                    Total Payment
+                </div> 
+                <h1 class="display-total-payment">0</h1>
+            </div>
+
+            <div class="daily-income-container">
+                <div class="payday">
+                   Daily Income
+                </div>
+                <h1 class="display-daily-income">0</h1>
+            </div>
+    
+                <div class="food-name clear">
+                    Clear Transaction
+                </div> 
+            
+        </div>
+
+      
+    </section>
+
     
 
     <script src="index.js"></script>

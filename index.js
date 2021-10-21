@@ -1,60 +1,114 @@
-// Object untuk menyimpan aksi nilai
+// Object untuk tempat menampung data 
 
-const cashier =  {
+const cashier = {
 
-    displayTotal: "0",
-    jumlahPesanan: [],
-    displayPesanan: "0"
-
-
+    listOrder: {
+        "Nasi Goreng": 20000,
+        "Soto Ayam": 15000,
+    },
+    totalPaymentDisplay : "0",
+    totalDailyIncomeDisplay: "0",
+    totalPayment: [],
+    dailyIncome: [],
+    nameOrder: [],
 }
 
-const updateDisplayTotal = (result) => {
-    let displayTotal = document.querySelector('.display');
-    cashier.displayTotal = result;
-    displayTotal.innerHTML = cashier.displayTotal;
-   
+// Manage display order and quantity
+const displayOrderQuantityandName = () => {
+    const QuantityOrder = document.querySelector('.display-total-order');
+    const orderName = document.querySelector('.display-order-name');
+    QuantityOrder.innerText = cashier.nameOrder.length;
+    orderName.innerHTML = cashier.nameOrder.join('<br>');
 }
 
-const updateDisplayPesanan = () => {
-    let displayPesanan = document.querySelector('.displayPemesanan');
-    cashier.displayPesanan = cashier.jumlahPesanan.length;
-     displayPesanan.innerHTML = cashier.displayPesanan;
+// Display total payment
+const displayTotalPayment = () => {
+    const totalPaymentDisplay = document.querySelector('.display-total-payment');
+    totalPaymentDisplay.innerText = cashier.totalPaymentDisplay;
+}
+
+const displayDailyIncome = () => {
+    const dailyIncome = document.querySelector('.display-daily-income');
+    dailyIncome.innerText = cashier.totalDailyIncomeDisplay;
+}
+
+// Manage selected item 
+const inputItem = (item) => {
+    cashier.nameOrder.push(item);
+}
+
+
+const clearTransaction = () => {
+    cashier.totalPaymentDisplay = "0";
+    cashier.totalPayment = [];
+    cashier.nameOrder = [];
   
 
 }
 
-const inputItem = (target) => {
-    cashier.jumlahPesanan.push(target);
-}
+// When item selected
+const chooseMenu = () => {
 
+    const btnMenu = document.querySelectorAll('.food-name');
 
+    for (let btnMenus of btnMenu) {
 
-const buttons = document.querySelectorAll('.product');
-for (let button of buttons) {
-        button.addEventListener('click', (event) => {
+        btnMenus.addEventListener('click', (event) => {
 
             const eventTarget = event.target;
 
-            // Fungsi khusus
-            if(eventTarget.classList.contains('total')){
-                totalPembayaran(cashier.jumlahPesanan);
-                updateDisplayTotal(totalPembayaran(cashier.jumlahPesanan))
-                return;
-
+            if(eventTarget.classList.contains('clear')) {
+           
+            totalDailyIncome(totalPayment());
+            displayDailyIncome();
+            clearTransaction(); 
+            displayTotalPayment();
+            displayOrderQuantityandName(); 
+            return
             }
-          
+
             inputItem(eventTarget.innerText);
-            updateDisplayPesanan();
-
-    })
+            totalPayment(eventTarget.innerText);
+            displayOrderQuantityandName(); 
+            displayTotalPayment();
+        })
+    }
+    
 }
 
-const totalPembayaran = (jumlahPesanan) => {
+
+const totalPayment = (target) => {
+
+    if(target === "Nasi Goreng")
+     {
+        cashier.totalPayment.push(cashier.listOrder["Nasi Goreng"]);
+    } else if(target === "Soto Ayam") {
+        cashier.totalPayment.push(cashier.listOrder["Soto Ayam"]);
+    } 
+
     let result = 0;
-    for(let index = 0; index < jumlahPesanan.length; index++) {
-        result += parseInt(jumlahPesanan[index]);
-        
-        }
-        return result;
+    for (let payment of cashier.totalPayment) {
+            result += payment; 
+    }
+    cashier.totalPaymentDisplay = result;
+    return result;
+   
 }
+
+
+const totalDailyIncome = (result) => {
+    
+    cashier.dailyIncome.push(result);
+
+    let income = 0;
+
+    for (let dailyIncome of cashier.dailyIncome) {
+            income+= dailyIncome;
+    }
+
+    cashier.totalDailyIncomeDisplay = income;
+    
+}
+
+
+chooseMenu();
