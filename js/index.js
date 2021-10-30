@@ -1,13 +1,13 @@
 // Object untuk tempat menampung data 
 
 const cashier = {
-
     listOrder: {
         "Nasi Goreng": 20000,
         "Soto Ayam": 15000,
     },
     totalPaymentDisplay : "0",
     totalDailyIncomeDisplay: "0",
+    displaySearch: "",
     totalPayment: [],
     dailyIncome: [],
     nameOrder: [],
@@ -19,6 +19,7 @@ const displayOrderQuantityandName = () => {
     const orderName = document.querySelector('.display-order-name');
     QuantityOrder.innerText = cashier.nameOrder.length;
     orderName.innerHTML = cashier.nameOrder.join('<br>');
+
 }
 
 // Display total payment
@@ -112,3 +113,48 @@ const totalDailyIncome = (result) => {
 
 
 chooseMenu();
+
+
+
+const updateDisplaySearch = () => {
+    let displaySearch = document.querySelector('.display-search');
+    displaySearch.innerHTML = cashier.displaySearch;
+}
+
+const searchInput = () => {
+    const searchInput = document.querySelector('.search-text').value;
+    return searchInput;
+}
+
+
+const btnSearch = () => {
+    const searchButton = document.querySelector('#btnSearch');
+    
+    searchButton.addEventListener('click', (event) => {
+
+        if(cashier.nameOrder.length != 0) {
+        for (let orderName of cashier.nameOrder) {  
+    
+            if(searchInput() === orderName) {
+                cashier.displaySearch = orderName;
+                updateDisplaySearch();
+                cashier.displaySearch = "";
+                return true;
+            } else {
+                alert("Food that you want it doesnt registered");
+                return false;
+            }
+            
+        }
+    } else {
+        alert("Consumen doesnt order anything");
+    }
+        
+    })
+}
+
+btnSearch();
+
+
+
+
