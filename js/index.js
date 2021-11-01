@@ -1,5 +1,5 @@
-// Object untuk tempat menampung data 
 
+// Object untuk tempat menampung data 
 const cashier = {
     listOrder: {
         "Nasi Goreng": 20000,
@@ -121,40 +121,38 @@ const updateDisplaySearch = () => {
     displaySearch.innerHTML = cashier.displaySearch;
 }
 
-const searchInput = () => {
-    const searchInput = document.querySelector('.search-text').value;
-    return searchInput;
-}
-
-
-const btnSearch = () => {
-    const searchButton = document.querySelector('#btnSearch');
-    
-    searchButton.addEventListener('click', (event) => {
-
-        if(cashier.nameOrder.length != 0) {
-        for (let orderName of cashier.nameOrder) {  
-    
-            if(searchInput() === orderName) {
-                cashier.displaySearch = orderName;
-                updateDisplaySearch();
-                cashier.displaySearch = "";
-                return true;
-            } else {
-                alert("Food that you want it doesnt registered");
-                return false;
-            }
-            
+const formSearch = () => {
+    const searchFrom = document.querySelector('.search-text').value;
+    try {
+        if(searchFrom == '' || searchFrom == null) {
+            throw new SyntaxError('Form search can not be empty');
         }
-    } else {
-        alert("Consumen doesnt order anything");
+    } catch(error) {
+        if(error instanceof SyntaxError) {
+            alert(error);
+        }
     }
-        
-    })
+    return searchFrom.toLowerCase();
 }
 
-btnSearch();
+const NameOrder = () => {
+    try {
+    if(cashier.nameOrder.length != 0) {
+      
+        for(let index=0; index < cashier.nameOrder.length; index++) {
+            if(formSearch() == cashier.nameOrder[index].toLowerCase()) {
+                return cashier.nameOrder[index].toLowerCase();
+        } 
+    }
+    } 
+} catch(error) {
+    alert(error.message);
+}
+}
 
-
-
-
+const btnSearch = document.querySelector('#btnSearch');
+btnSearch.addEventListener('click', () => {
+    cashier.displaySearch = NameOrder();
+    updateDisplaySearch();
+    return;
+})
