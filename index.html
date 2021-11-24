@@ -4,107 +4,101 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Cashier Program</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./src/styles/search.css">
+    <link rel="stylesheet" href="./src/styles/listmenu.css">
+    <link rel="stylesheet" href="./src/styles/transaction-menu.css">
+    <title>Simple Cashier Program 2.0</title>
 </head>
 <body>
+    
+    <div id="content">
+     
+        <section class="search-container">
+            <!-- <form action="" class="search-form"> -->
+                <input type="text" placeholder="Are u looking for food ... ?" class="search-input">
+                <button type="button"  class="btn-search">🔍</button>
+            <!-- </form> -->
+        </section>
+        <div id="food-list">
 
-    <section class="first-container">
-        <div class="search-container">
-       <a href="http://briansdream.my.id/"> <h1>briansdream restaurant</h1></a>
-        <input type="text" placeholder="Looking for food ?" class="search-text"> 
-        <button type="submit" id="btnSearch">Search</button>
-        <h1 class="display-search"> </h1>
-    </div>
-    </section>
+        </div> 
 
 
-    <section class="first-container-menu">
-
-        
-        <div class="first-list-menu ">
-            <div class="food-image">
-                <img src="./asset/nasi.jpg" alt="Fried Rice" title="Fried Rice" >
+        <section class="container-list-menu">
+            <div class="title">
+               <h2> List of food menu </h2>
             </div>
+
+            <div class="container-menu">
             
-            <div class="container-food-name">
-                <div class="food-name">
-                    Nasi Goreng
-                </div>
-                <div class="price">
-                20000
-                </div>
-            </div>
-            </div>
+            <div class="food-container">
 
-            <div class="second-list-menu ">
-                <div class="food-image">
-                    <img src="./asset/soto-ayam.webp.jpg" alt="Fried Rice" title="Fried Rice" >
-                </div>
+                <input type="checkbox" name="foods" value="fried rice" id="fried-rice">
+                <label for="fried-rice">fried rice</label>
+                <br>
                 
-                <div class="container-food-name">
-                    <div class="food-name">
-                        Soto Ayam
-                    </div>
-    
-                    <div class="price">
-                    15000
-                </div>
-                </div>
+                <input type="checkbox" name="foods" value="meatballs" id="meatballs">
+                <label for="meatballs">meatballs</label>
+                <br>
+
+                <input type="checkbox" name="foods" value="fried noodles" id="fried-noodles">
+                <label for="fried-noodles">fried noodles</label>
+                 <br>
+
+                <input type="checkbox" name="foods" value="tofu" id="tofu">
+                <label for="tofu">tofu</label>
+                <br>
+
+                <input type="checkbox" name="foods" value="omelette" id="omelette">
+                <label for="omelette">omelette</label>
+                <br>
             </div>
 
+            <div class="drink-container">
+                <input type="checkbox" name="foods" value="orange juice" id="orange-juice">
+                <label for="orange-juice">orange juice</label>
+                <br>
+
+                <input type="checkbox" name="foods" value="water" id="water">
+                <label for="water">water</label>
+                <br>
+
+                <input type="checkbox" name="foods" value="mango juice" id="mango-juice">
+                <label for="mango-juice">mango juice</label>
+                <br>
+
+                <input type="checkbox" name="foods" value="heineken" id="heineken">
+                <label for="heineken">heineken</label>
+                <br>
+                <input type="checkbox" name="foods" value="jack daniels" id="jack-daniels">
+                <label for="jack-daniels">jack daniel's</label>
+                <br>
+            </div>
+        </div>
+        <div class="button-transaction-container">
+        <button value="buy" class="btn-buy">buy food and drinks</button>
+    </div>    
     </section>
 
+    <table>
+        <thead>
+            <th>List of food</th>
+            <th>Amount of food</th>
+            <th>Discount</th>
+            <th>Total price</th>
+          
+        </thead>
+        <tbody class="table-body">
 
+        </tbody>
 
+    </table>
 
+    <div class="container-remove-data">
+        <button class="btnRemoveData" type="button">remove all transaction</button>
+    </div>
+    </div>
 
-    <section class="payment-container">
-        <div class="container-quantity-and-name-order">
-            <div class="order-quantity">
-               
-                <h1>Order Quantity =</h1>
-                <h1 class="display-total-order">0</h1>
-             
-            </div>
-            
-
-            <div class="order-name">
-                <h1>Order Name :</h1>
-                <h1 class="display-order-name"></h1>
-            </div>
-
-        </div>
- 
-
-        <div class="container-total-payment">
-
-            <div class="total-payment">
-                <div class="total-payment-btn">
-                    Total Payment
-                </div> 
-                <h1 class="display-total-payment">0</h1>
-            </div>
-
-            <div class="daily-income-container">
-                <div class="payday">
-                   Daily Income
-                </div>
-                <h1 class="display-daily-income">0</h1>
-            </div>
-    
-                <div class="food-name clear">
-                    Clear Transaction
-                </div> 
-            
-        </div>
-
-      
-    </section>
-
-    
-
-    <script src="/js/index.js" type="module"></script>
-
+<script src="./app.js" type="module"></script>
 </body>
 </html>

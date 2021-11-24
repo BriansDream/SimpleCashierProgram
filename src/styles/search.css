@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&family=Source+Sans+Pro&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+#content {
+    max-width: 1440px;
+    margin: 0 auto;
+
+}
+
+#content .search-container {
+    padding: 10px;
+
+    margin: 0 auto;
+    text-align: center;
+}
+
+.search-container input,
+button {
+    font-size: 1.3em;
+}
+
+.search-container .search-input {
+    border-radius: 5px;
+    border: 0.2px solid;
+    width: 70%;
+    text-align: center;
+
+}
+
+.search-container .btn-search {
+    background-color: rgb(129, 209, 255);
+    padding-right: 10px;
+
+    border-radius: 0px 30px 30px 0px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* List Foods */
+
+#food-list {
+    display: flex;
+    max-width: 1440px;
+    margin: 0 auto;
+    overflow: scroll;
+    text-align: center;
+    padding: 10px;
+
+}
+
+#food-list .food {
+    margin: 0 auto;
+}
+
+#food-list img {
+    width: 350px;
+    height: 250px;
+    border-radius: 30px;
+    padding: 10px;
+    object-fit: cover;
+    object-position: center;
+
+}
+
+#food-list .placeholder {
+
+    margin: 0 auto;
+}
+
+/* Last List foods */

@@ -1,0 +1,47 @@
+.container-list-menu {
+    margin-top: 20px;
+}
+
+.container-list-menu .title {
+    text-align: center;
+    font-weight: bolder;
+}
+
+.container-menu {
+    display: flex;
+    font-size: 1.4em;
+    padding-top: 10px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+.container-menu .food-container {
+    padding-left: 10px;
+    flex-basis: 50%;
+
+}
+
+.container-menu .drink-container {
+    padding-left: 10px;
+}
+
+.container-list-menu .button-transaction-container {
+
+    text-align: center;
+}
+
+.container-list-menu .button-transaction-container .btn-buy {
+
+    font-size: 1.1em;
+    background-color: red;
+    border: none;
+    color: white;
+    padding: 8px;
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bolder;
+    border-radius: 40px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}

@@ -1,0 +1,1 @@
+Purpose of this app is to implement all lesson that i've learned from class front-end web fundamental.

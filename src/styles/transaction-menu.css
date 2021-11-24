@@ -1,0 +1,47 @@
+table {
+    margin: 0 auto;
+    margin-top: 20px;
+
+    width: 100%;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+table thead {
+    background-color: rgb(255, 223, 41);
+}
+
+table thead th {
+    padding: 10px;
+}
+
+table .table-body {
+    overflow: scroll;
+    text-align: center;
+}
+
+
+
+
+table .table-body tr:nth-child(even) {
+    background-color: rgb(51, 186, 219);
+    color: white;
+    font-weight: bolder;
+}
+
+
+.container-remove-data {
+    text-align: center;
+}
+
+.container-remove-data .btnRemoveData {
+    background-color: rgb(255, 62, 62);
+    color: white;
+    padding: 8px;
+    border-radius: 30px;
+    font-weight: bolder;
+    border: none;
+    margin-bottom: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
